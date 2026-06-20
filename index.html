@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOUNDWAVE FEST 2025 - UTS Web Desain 2 | Paket A</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+  <style>
+    /* =============================================
+       WARNA BARU: CYBERPUNK PREMIUM NIGHT
+       ============================================= */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0f1d;
+      color: #e2e8f0;
+    }
+    .hero {
+      background: linear-gradient(135deg, #09090e, #111827, #1e1b4b);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      border-bottom: 2px solid #00f2fe;
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 900;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #94a3b8;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #00f2fe;
+      border-left: 5px solid #4facfe;
+      padding-left: 15px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid #1e293b;
+    }
+    .soal-label {
+      display: inline-block;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      color: #0a0f1d;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    /* Kartu lineup artis */
+    .artist-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      height: 100%;
+    }
+    .artist-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #00f2fe;
+    }
+    .artist-card h5 {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .artist-card p {
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+    /* Tiket */
+    .ticket-card {
+      background: #111827;
+      border: 2px solid #1e293b;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    .ticket-card .price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #00f2fe;
+    }
+    .ticket-card .type {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    /* Footer */
+    footer {
+      background: #070a13;
+      text-align: center;
+      padding: 35px;
+      color: #64748b;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* =============================================
+       EFEK HOVER & TRANSISI KUSTOM
+       ============================================= */
+    .artist-card, .ticket-card, .btn, .social-badge, .contact-item-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .artist-card:hover {
+      transform: translateY(-8px);
+      border-color: #00f2fe;
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+    }
+
+    .ticket-card:hover {
+      transform: translateY(-8px);
+      border-color: #4facfe;
+      box-shadow: 0 12px 35px rgba(79, 172, 254, 0.2);
+    }
+
+    /* Hover Jadwal Penampilan */
+    .table-hover tbody tr {
+      transition: background-color 0.2s ease;
+    }
+    .table-hover tbody tr:hover {
+      background-color: #1e293b !important;
+    }
+    .table-hover tbody tr:hover td {
+      color: #00f2fe !important;
+    }
+
+    /* Hover Tombol */
+    .btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+    }
+
+    /* =============================================
+       STYLE BARU UTK SOAL 5 (KONTAK)
+       ============================================= */
+    .contact-item-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      height: 100%;
+    }
+    .contact-item-card:hover {
+      border-color: #4facfe;
+      background: #162238;
+    }
+    .contact-icon-wrapper {
+      width: 45px;
+      height: 45px;
+      background: rgba(0, 242, 254, 0.1);
+      color: #00f2fe;
+      font-weight: bold;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .social-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: #1e293b;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      border: 1px solid transparent;
+    }
+    .social-badge.ig:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      box-shadow: 0 5px 15px rgba(220, 39, 67, 0.3);
+    }
+    .social-badge.tw:hover {
+      background: #000000;
+      border-color: #333;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">    
+    <h1>■ SOUNDWAVE FEST 2025</h1>
+    <p class="mt-2">Festival Musik Terbesar Tahun Ini &mdash; 3 Hari, 20 Band, 1 Panggung Epik</p>
+    <p class="mb-0"><strong style="color:#00f2fe;">■ 15–17 Agustus 2025</strong> &nbsp;|&nbsp; <strong style="color:#00f2fe;">■ Gelora Bung Karno, Jakarta</strong></p>
+  </div>
+</div>
+
+<section id="lineup">
+  <div class="container">
+    <span class="soal-label">Soal 1 — Grid Bootstrap</span>
+    <h2 class="section-title">Lineup Artis</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Isi semua [...] di bawah ini dengan class Bootstrap yang benar agar kartu artis tampil 3 kolom di layar besar, 2 kolom di tablet, dan 1 kolom di HP.</em>
+    </p>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="artist-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyALUdWyAayCH2_whgRz2UDwHEiVUtsqGuP88PNtlDUQ&s=10" alt="Artis 1"/>
+          <h5>Rocket Ignition</h5>
+          <p class="mb-0">Hard Rock | Jakarta</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="artist-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNpTdlFPry-oxrAOLUaT1KgKIQmxo6fPJGDDzrzn4yqg&s=10" alt="Artis 2"/>
+          <h5>Midnight Echo</h5>
+          <p class="mb-0">Indie Pop | Bandung</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="artist-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8r-uBBnPeER1LSltouRCK_2WcUqLvHgzFA2hAKJl5bA&s=10" alt="Artis 3"/>
+          <h5>Thunder Hollow</h5>
+          <p class="mb-0">Metal | Surabaya</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="artist-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Y9P7_IdANf4qfNGdDPv69VNRsOaXXsZPzJBxrAJ58w&s=10" alt="Artis 4"/>
+          <h5>The Wanderers</h5>
+          <p class="mb-0">Acoustic | Yogyakarta</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="artist-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbGu5Y8_z2SWkQUpqCLaPk22u5wTcpBy4ku-eTRqUkXA&s=10" alt="Artis 5"/>
+          <h5>Solar Drift</h5>
+          <p class="mb-0">Psychedelic | Bali</p>
+        </div>
+      </div>
+       <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="artist-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxxdYRWxpmtw4lRo5BXNWcouPG5Zwmm44SsqyS9Xn-Q&s=10" alt="Artis 6"/>
+          <h5>Iron Canvas</h5>
+          <p class="mb-0">Progressive | Medan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="jadwal">
+  <div class="container">
+    <span class="soal-label">Soal 2 — Tabel Bootstrap</span>
+    <h2 class="section-title">Jadwal Penampilan</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Isi semua [...] agar tabel tampil dengan style Bootstrap: tabel bergaris (bordered), baris selang-seling (striped), efek hover, dan responsif di HP.</em>
+    </p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover text-white" style="background-color: #111827; border-color: #1e293b;">
+        <thead style="background-color: #0f172a; color: #00f2fe;">
+          <tr>
+            <th style="border-color: #1e293b;">Hari</th>
+            <th style="border-color: #1e293b;">Waktu</th>
+            <th style="border-color: #1e293b;">Artis</th>
+            <th style="border-color: #1e293b;">Genre</th>
+            <th style="border-color: #1e293b;">Panggung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-color: #1e293b;">Hari 1 (15 Agt)</td>
+            <td style="border-color: #1e293b;">18.00 – 19.30</td>
+            <td style="border-color: #1e293b;">The Wanderers</td>
+            <td style="border-color: #1e293b;">Acoustic</td>
+            <td style="border-color: #1e293b;">Stage B</td>
+          </tr>
+          <tr>
+            <td style="border-color: #1e293b;">Hari 1 (15 Agt)</td>
+            <td style="border-color: #1e293b;">20.00 – 22.00</td>
+            <td style="border-color: #1e293b;">Midnight Echo</td>
+            <td style="border-color: #1e293b;">Indie Pop</td>
+            <td style="border-color: #1e293b;">Main Stage</td>
+          </tr>
+          <tr>
+            <td style="border-color: #1e293b;">Hari 2 (16 Agt)</td>
+            <td style="border-color: #1e293b;">17.00 – 18.30</td>
+            <td style="border-color: #1e293b;">Solar Drift</td>
+            <td style="border-color: #1e293b;">Psychedelic</td>
+            <td style="border-color: #1e293b;">Stage B</td>
+          </tr>
+          <tr>
+            <td style="border-color: #1e293b;">Hari 2 (16 Agt)</td>
+            <td style="border-color: #1e293b;">19.30 – 21.30</td>
+            <td style="border-color: #1e293b;">Thunder Hollow</td>
+            <td style="border-color: #1e293b;">Metal</td>
+            <td style="border-color: #1e293b;">Main Stage</td>
+          </tr>
+          <tr>
+            <td style="border-color: #1e293b;">Hari 3 (17 Agt)</td>
+            <td style="border-color: #1e293b;">18.00 – 19.00</td>
+            <td style="border-color: #1e293b;">Iron Canvas</td>
+            <td style="border-color: #1e293b;">Progressive</td>
+            <td style="border-color: #1e293b;">Stage B</td>
+          </tr>
+          <tr>
+            <td style="border-color: #1e293b;">Hari 3 (17 Agt)</td>
+            <td style="border-color: #1e293b;">20.00 – 22.30</td>
+            <td style="border-color: #1e293b;">Rocket Ignition</td>
+            <td style="border-color: #1e293b;">Hard Rock</td>
+            <td style="border-color: #1e293b;">Main Stage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="daftar">
+  <div class="container">
+    <span class="soal-label">Soal 3 — Form Bootstrap</span>
+    <h2 class="section-title">Beli Tiket</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Isi semua [...] dengan class Bootstrap yang benar agar form tampil rapi, responsif, dan memiliki styling yang sesuai.</em>
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card p-4 bg-dark border-secondary" style="background-color: #111827 !important; border-color: #1e293b !important; border-radius: 14px;">
+          <div class="form-group">
+            <label for="nama" class="font-weight-bold">Nama Lengkap</label>
+            <input type="text" class="form-control bg-secondary text-white border-0" id="nama" placeholder="Masukkan nama lengkap Anda" style="background-color: #1e293b !important; color: #fff !important;"/>
+          </div>
+          <div class="form-group">
+            <label for="email" class="font-weight-bold">Alamat Email</label>
+            <input type="email" class="form-control bg-secondary text-white border-0" id="email" placeholder="contoh@email.com" style="background-color: #1e293b !important; color: #fff !important;"/>
+          </div>
+          <div class="form-group">
+            <label for="telp" class="font-weight-bold">Nomor Telepon</label>
+            <input type="tel" class="form-control bg-secondary text-white border-0" id="telp" placeholder="08xxxxxxxxxx" style="background-color: #1e293b !important; color: #fff !important;"/>
+          </div>
+          <div class="form-group">
+            <label for="tiket" class="font-weight-bold">Jenis Tiket</label>
+            <select class="form-control bg-secondary text-white border-0" id="tiket" style="background-color: #1e293b !important; color: #fff !important;">
+              <option value="">-- Pilih Jenis Tiket --</option>
+              <option>Regular (Rp 150.000)</option>
+              <option>VIP (Rp 350.000)</option>
+              <option>VVIP (Rp 750.000)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="jumlah" class="font-weight-bold">Jumlah Tiket</label>
+            <input type="number" class="form-control bg-secondary text-white border-0" id="jumlah" min="1" max="10" value="1" style="background-color: #1e293b !important; color: #fff !important;"/>
+            <small class="form-text text-muted">Maksimal pembelian 10 tiket per transaksi.</small>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="syarat"/>
+              <label class="form-check-label text-muted" for="syarat">
+                Saya menyetujui syarat dan ketentuan yang berlaku.
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-block font-weight-bold text-dark" style="background: linear-gradient(to right, #00f2fe, #4facfe); border: none; border-radius: 8px;">
+            ■■ Beli Tiket Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="harga">
+  <div class="container">
+    <span class="soal-label">Soal 4 — Implementasi Wireframe</span>
+    <h2 class="section-title">Harga Tiket</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Lihat wireframe pada soal PDF. Buat section Harga Tiket sesuai dengan layout wireframe tersebut menggunakan Bootstrap.</em>
+    </p>
+     <div class="row">
+      <div class="col-12 col-md-4 mb-4">
+        <div class="ticket-card">
+          <div class="type">Regular</div>
+          <div class="price my-3">Rp 150.000</div>
+          <hr style="border-color: #1e293b;">
+          <ul class="text-left list-unstyled pl-2 my-4 text-muted">
+            <li class="mb-2">✓ Akses Area Festival (3 Hari)</li>
+            <li class="mb-2">✓ Standard Merchandise Kit</li>
+            <li class="mb-2">✓ Akses Food & Beverage Zone</li>
+          </ul>
+          <a href="#daftar" class="btn btn-outline-light btn-block mt-3" style="border-color: #00f2fe; color: #00f2fe;">BELI TIKET</a>
+        </div>
+      </div>
+      
+      <div class="col-12 col-md-4 mb-4">
+        <div class="ticket-card" style="border-color: #00f2fe; background: #161e31;">
+          <div class="badge mb-2 px-3 py-2 text-dark font-weight-bold" style="background: linear-gradient(to right, #00f2fe, #4facfe);">TERPOPULER</div>
+          <div class="type">VIP</div>
+          <div class="price my-3" style="color: #4facfe;">Rp 350.000</div>
+          <hr style="border-color: #1e293b;">
+          <ul class="text-left list-unstyled pl-2 my-4">
+            <li class="mb-2 text-white">✓ Semua keuntungan tiket Regular</li>
+            <li class="mb-2 text-white">✓ Akses Tribune Depan Panggung</li>
+            <li class="mb-2 text-white">✓ Jalur Antrean Khusus VIP</li>
+          </ul>
+          <a href="#daftar" class="btn btn-block mt-3 font-weight-bold text-dark" style="background: linear-gradient(to right, #00f2fe, #4facfe); border: none;">BELI TIKET</a>
+        </div>
+      </div>
+      
+      <div class="col-12 col-md-4 mb-4">
+        <div class="ticket-card">
+          <div class="type">VVIP</div>
+          <div class="price my-3">Rp 750.000</div>
+          <hr style="border-color: #1e293b;">
+          <ul class="text-left list-unstyled pl-2 my-4 text-muted">
+            <li class="mb-2">✓ Semua keuntungan tiket VIP</li>
+            <li class="mb-2">✓ Meet & Greet Eksklusif Artis</li>
+            <li class="mb-2">✓ Lounge & Prasmanan Gratis</li>
+          </ul>
+          <a href="#daftar" class="btn btn-outline-light btn-block mt-3" style="border-color: #00f2fe; color: #00f2fe;">BELI TIKET</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="container">
+    <span class="soal-label">Soal 5 — Kreativitas Desain</span>
+    <h2 class="section-title">Hubungi Kami</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Buat section kontak/informasi event sesuai kreativitasmu. Minimal berisi: alamat, email, nomor telepon, dan media sosial event.</em>
+    </p>
+    
+    <div class="row">
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="contact-item-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="contact-icon-wrapper">📍</div>
+                <h6 class="mb-0 ml-3 font-weight-bold text-white">Lokasi Utama</h6>
+              </div>
+              <p class="small text-muted mb-0">Gelora Bung Karno (GBK), Senayan, Jakarta Pusat, Indonesia.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="contact-item-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="contact-icon-wrapper">✉️</div>
+                <h6 class="mb-0 ml-3 font-weight-bold text-white">Surel Resmi</h6>
+              </div>
+              <p class="small text-muted mb-0">info@soundwaveariel2026.com<br>arielrafasyach@gmail.com</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="contact-item-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="contact-icon-wrapper">📞</div>
+                <h6 class="mb-0 ml-3 font-weight-bold text-white">Hotline & CS</h6>
+              </div>
+              <p class="small text-muted mb-0">+62 897-7600-200<br>(Senin - Minggu 09.00 - 21.00 WIB)</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-item-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="contact-icon-wrapper">🌐</div>
+                <h6 class="mb-0 ml-3 font-weight-bold text-white">Sosial Media</h6>
+              </div>
+              <div class="d-flex flex-wrap gap-2" style="gap: 8px;">
+                <a href="https://www.instagram.com/rieellrav?igsh=MWQzcm1tbmpqemYydg==" class="social-badge ig mr-2 mb-2">📸 @rieellrav</a>
+                <a href="https://www.tokopedia.com/search?navsource=home&q=Sound+system&source=universe&st=product" class="social-badge tw mb-2">🐦 @arielganteng</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-5">
+        <div class="p-4 rounded h-100 d-flex flex-column justify-content-center" style="background: linear-gradient(145deg, #111827, #16223f); border-left: 4px solid #00f2fe; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+          <h5 class="text-white font-weight-bold mb-3 d-flex align-items-center">
+            <span class="mr-2" style="color: #00f2fe;">🚇</span> Panduan Akses Lokasi
+          </h5>
+          <p class="small text-muted mb-3" style="line-height: 1.6;">
+            Demi kenyamanan bersama dan menghindari kepadatan lalu lintas di area Senayan, kami sangat menyarankan seluruh pengunjung untuk memanfaatkan transportasi umum massal.
+          </p>
+          <div class="p-3 rounded mb-0" style="background: rgba(0, 242, 254, 0.05); border: 1px dashed rgba(0, 242, 254, 0.2);">
+            <ul class="small text-white pl-3 mb-0" style="line-height: 1.5;">
+              <li class="mb-1"><strong style="color:#00f2fe;">MRT Jakarta:</strong> Turun di Stasiun Istora Mandiri atau Stasiun Senayan (Jalan kaki 5 menit).</li>
+              <li><strong style="color:#00f2fe;">TransJakarta:</strong> Gunakan Koridor 1 (Blok M - Kota), turun langsung di Halte GBK.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="mb-0">SOUNDWAVE FEST 2025 &copy; Hak Cipta Dilindungi | UTS Web Desain 2 — Paket A</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
